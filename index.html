@@ -98,7 +98,10 @@
       if (eventKey !== '') { rudderanalytics.track(eventKey) } else { rudderanalytics.track('custom event key not provided') }
     } else if (e.type == 'page') {
       pageView()
-    }
+    } else if (e.type === 'group') {
+        var id = prompt('Enter GroupId');
+        rudderanalytics.group(id, { company: "rudderstack" })
+     }
   }
 
   const pageView = () => {
@@ -303,6 +306,11 @@ input {
     <div>
       <button onClick="sendEvent({type: 'page'})">Page</button>
     <div>
+    
+    <div>
+       <button onClick="sendEvent({type: 'group'})">Group</button>
+     <div>
+
 
       <div>
         <button onClick="sendEvent({type: 'custom'})">Send custom event:</button>
