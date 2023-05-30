@@ -76,6 +76,7 @@
         rudderanalytics.track(e.event)
       }
       console.log('RS AnonymousId ->', rudderanalytics.getAnonymousId())
+      window.location.replace("https://ryanmccrary.github.io/rudderstackdemo/dev/");
     } else if (e.type == 'identify') {
       var id = prompt('Enter your identifier');
       rudderanalytics.identify(id, { name: "First Name" })
