@@ -53,7 +53,7 @@
 
 
 
-    rudderanalytics.load(writeKey, dataPlane, { configUrl: 'https://api.dev.rudderlabs.com', bufferDataPlaneEventsUntilReady: true });
+    rudderanalytics.load(writeKey, dataPlane, { configUrl: 'https://api.rudderlabs.com' });
 
   var items = [];
 
@@ -76,7 +76,6 @@
         rudderanalytics.track(e.event)
       }
       console.log('RS AnonymousId ->', rudderanalytics.getAnonymousId())
-      window.location.replace("https://ryanmccrary.github.io/rudderstackdemo/dev/");
     } else if (e.type == 'identify') {
       var id = prompt('Enter your identifier');
       rudderanalytics.identify(id, { name: "First Name" })
@@ -181,7 +180,7 @@
 
 </script>
 
-<script defer src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js"></script>
+<script defer src="https://cdn.rudderlabs.com/v1.1/staging/rudder-analytics-staging.min.js"></script>
 
 <link rel="stylesheet" href="https://unpkg.com/mvp.css">
 
